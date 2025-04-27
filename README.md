@@ -20,6 +20,16 @@ The easiest way is to use provided `devcontainer.json` configuration for vscode:
       cargo build --target mos-nes-nrom-128-none
     ```
 
+## Additional notes
+
+The toolchain offers only one build target `mos-unknown-none` out of the box.
+To build the project for other targets, the docker container contains a python script `/tmp/create_mos_targets.py`.
+I have run this script in `build-targets/` and added the results to this repository for convenience.
+To build the project for a given target, let's say `mos-nes-nrom`, you can run the following command:
+```sh
+cargo build --target build-targets/mos-nes-nrom.json
+```
+
 ## License
 
 All source code (including code snippets) is licensed under either of
